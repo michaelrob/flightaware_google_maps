@@ -10,7 +10,6 @@ function renderMarker(map, lat, long, type, name, waypoints = 0, origin = 0, des
         new google.maps.Point(0, 0),
         new google.maps.Point(15, 15)
       )
-      // : iconBase + 'plane@1x.png'
     },
     airfield: {
       icon: new google.maps.MarkerImage(
@@ -19,33 +18,14 @@ function renderMarker(map, lat, long, type, name, waypoints = 0, origin = 0, des
         new google.maps.Point(0, 0),
         new google.maps.Point(30, 30)
       )
-      //iconBase + 'base-icon.png'
     }
   };
 
+  // sets content string for aircraft and airport
   if (type == "plane") {
-    var contentString = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">'+ name +'</h1>'+
-        '<div id="bodyContent">'+
-        '<h2 class="departed">Departed</h2>'+
-        '<p></p>'+
-        '<h2 class="arriving">Arriving</h2>'+
-        '<p></p>'+
-        '<h3 class="time_left">minutes left<h3>'+
-        '<p></p>'+
-        '<p></p>'+
-        '</div>';
+    var contentString = aircraftContentString;
   } else {
-    var contentString = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">'+ name +'</h1>'+
-        '<div id="bodyContent">'+
-        '<p></p>'+
-        '<p></p>'+
-        '</div>';
+    var contentString = airportContentString;
   }
 
   var infowindow = new google.maps.InfoWindow({
