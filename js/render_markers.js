@@ -1,5 +1,36 @@
 function renderMarker(map, lat, long, type, name, waypoints = 0, origin = 0, destination = 0) {
 
+  // content strings for aircraft and airports
+  var aircraftContentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">'+ name +'</h1>'+
+      '<div id="bodyContent">'+
+      '<h2 class="departed">Departed</h2>'+
+      '<p></p>'+
+      '<h2 class="arriving">Arriving</h2>'+
+      '<p></p>'+
+      '<h3 class="time_left">minutes left<h3>'+
+      '<p></p>'+
+      '<p></p>'+
+      '</div>';
+
+  var airportContentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">'+ name +'</h1>'+
+      '<div id="bodyContent">'+
+      '<h2>Address</h2>'+
+      '<p></p>'+
+      '<h2>Telephone</h2>'+
+      '<p></p>'+
+      '<h2>Fax</h2>'+
+      '<p></p>'+
+      '<h2>Email</h2>'+
+      '<p></p>'+
+      '<button>Read More</button>'+
+      '</div>';
+
   // List of icons to use with google maps
   var iconBase = 'img/';
   var icons = {
